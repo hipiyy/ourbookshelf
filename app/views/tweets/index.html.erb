@@ -1,0 +1,22 @@
+<%= link_to "新規投稿ページへ", new_tweet_path %>
+<h1>私たちの本棚</h1>
+<%= link_to "マイページ", user_path(current_user.id) %>
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<h3>投稿一覧</h3>
+
+<div class="tweets-container">
+  <% @tweets.each do |t| %>
+    <%= link_to "#{t.name}", "/file/#{t.name}" %>
+    <div class="tweet">
+      <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      <%= t.user.email %>
+      <%= t.user.name %>
+      <%= link_to "ユーザーページ", user_path(t.user.id) %>
+      <%= t.body %>
+      <%= t.created_at %>
+      <%= link_to( "詳細", tweet_path(t.id), {class:"smallButton" })%>
+      <%= button_to "削除", tweet_path(t.id), method: :delete, :class=>"smallButton" %>
+    </div>
+  <% end %>
+</div>
+

@@ -1,0 +1,22 @@
+<h1>私たちの本棚</h1>
+<h3 class="command">新規投稿</h3>
+
+<%= form_for @tweet do |f| %>
+  <div class="field">
+    <%= f.label :PDF投稿 %>
+  <%= f.file_field :file %>
+  <div class="field">
+    <%= f.label :文字投稿 %>
+    <%= f.text_field :body, :size => 140 %>
+  </div>
+  <div class="field">
+    <%= f.label :画像投稿 %>
+    <%= f.file_field :image %>
+  </div>
+  <%= f.label :tag_list, 'タグをカンマ区切りで入力' %>
+  <%= text_field_tag 'tweet[tag_list]', @tweet.tag_list, :class => "form-control" %>
+  <%= f.submit "Tweetする", class:"button" %>
+<% end %>
+<%= link_to "Tweet一覧に戻る", tweets_path %>
+
+

@@ -1,0 +1,20 @@
+<h1 class="title">私たちの本棚</h1>
+<h3>Tweet詳細</h3>
+<div class="tweet">
+  <p><%= @tweet.body %></p>
+  <p><%= @tweet.created_at %></p>
+  <% if @tweet.user_id != current_user.id %>
+    <% if Room.find_by(sender_id: current_user.id, tweet_id: @tweet.id)%>
+      <%= link_to "DM再入場", "/rooms/#{@tweet.id}"%>
+    <% else %> 
+      <%= link_to "DM開始", "/rooms/#{@tweet.id}/create"%>
+    <% end %>
+  <% end %>
+  <%= image_tag @tweet.image_url, size: "250x200" if @tweet.image? %>
+  <% @tweet.tag_list.each do |tag| %>
+    <span style="background-color: #e9e9e9; border-radius: 5px;"><%= tag %></span>
+  <% end %>
+</div>
+
+<%= link_to "Tweet一覧に戻る", tweets_path %>
+

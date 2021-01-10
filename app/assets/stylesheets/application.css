@@ -1,0 +1,67 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body{
+    margin:0;
+}
+.button{
+    display: inline-block;
+  width: 100px;
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: hsl(155, 100%, 28%);
+  border-bottom: 4px solid hsl(155, 80%, 14%);
+  border-radius: 10px;
+  transition: 0s;
+
+}
+.button:hover{
+    cursor: pointer;
+  text-decoration: none;
+  background: hsl(155, 80%, 14%);
+  transform: translate3d(0, 4px, 0);
+  transition: 0s;
+  border-bottom: none;
+
+}
+.smallButton{
+    display: inline-block;
+  width: 40px;
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: hsl(155, 100%, 28%);
+  border-bottom: 4px solid hsl(155, 80%, 14%);
+  border-radius: 10px;
+  transition: 0s;
+
+}
+.smallButton:hover{
+    cursor: pointer;
+  text-decoration: none;
+  background: hsl(155, 80%, 14%);
+  transform: translate3d(0, 4px, 0);
+  transition: 0s;
+  border-bottom: none;
+
+}
+.applicationContainer{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FFBF00;
+}

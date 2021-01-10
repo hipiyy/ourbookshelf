@@ -1,0 +1,25 @@
+<h1 class="titleA">DM</h1>
+
+
+<div class="tweets-container">
+  <% @messages.each do |t| %>
+    <div class="tweet">
+      
+    
+      <%= t.body %>
+      <%= t.created_at %>
+     
+    </div>
+  <% end %>
+</div>
+
+<%= form_for(@message, :url=> "/messages/#{@room.id}/#{params[:id]}/create" )do |f| %>
+
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_field :body, :size => 140 %>
+    </div>
+    
+    <%= f.submit "送信" %>
+  <% end %>
+  <%= link_to "Tweet一覧に戻る", tweets_path %>
