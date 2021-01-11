@@ -16,7 +16,7 @@
 <%= form_for(@message, :url=> "/messages/#{@room.id}/#{params[:id]}/create" )do |f| %>
 
     <div class="field">
-      <%= f.label :body %>
+      <%= f.label :文字投稿 %>
       <%= f.text_field :body, :size => 140 %>
     </div>
     

@@ -9,11 +9,43 @@
 }
 
 .command{
-    padding: 1rem 2rem;
-  border: 6px double #000;
+  position: relative;
+  padding: 1rem 2rem;
+  border: 4px solid #000;
+}
+
+.commandbefore {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  content: '';
+  border: 2px solid #000;
 }
 
 .titleA{
     padding: 1rem 2rem;
   border: 3px dotted #000;
+}
+
+.choice{
+  padding: 1rem 2rem;
+  border: 6px double #000;
+}
+
+.size{
+  width: 100%;
+  height: 200px;
+}
+
+.tweetstag{
+  width:100%;
+  height:20px;
+}
+.contents{
+  font-size: xx-large;
+}
+.contentsA{
+  color: red;
 }

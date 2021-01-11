@@ -10,8 +10,25 @@
   </head>
 
   <body>
+    <div class="applicationTitleBack">
+      <p class="applicationTitle">私たちの本棚</p>
+      <a onclick="judgeModal()">このサイトの使い方</a>
+      <div id="discriptionModal" style="display:none;">
+      <p　class="contents"><span class="contentsA">このサイトの使い方</span><br><br>このサイトは教育に関わる情報を得たい人が集まりお互いにgive&takeする場となっています。<br><br>PDF投稿、文字投稿、画像投稿ができるため様々な情報を行き来させることが可能です。<br><br>DM機能も搭載しているため、個人により個別な問答もできるようになっています。<br><br>皆さんに投稿でこの本棚をいっぱいにしましょう！！！</p></div>
+    </div>
     <div class="applicationContainer">
       <%= yield %>
     </div>
+
+    <script>
+      function judgeModal(){
+        const modalJudge = document.getElementById("discriptionModal");
+        if (modalJudge.style.display === "none" ){
+          modalJudge.style.display = "block";
+        }else{
+          modalJudge.style.display = "none";
+        }
+      }
+    </script>
   </body>
 </html>

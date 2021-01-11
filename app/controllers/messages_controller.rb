@@ -6,7 +6,8 @@ class MessagesController < ApplicationController
         message.user_id = current_user.id
         message.room_id = params[:id] #params[:id] は@tweet.idではダメ
         message.save
-        redirect_to("/rooms/#{params[:tweet_id]}")
+        room = Room.find(message.room_id)
+        redirect_to("/rooms/#{params[:tweet_id]}/#{room.sender_id}")
         
     end
 

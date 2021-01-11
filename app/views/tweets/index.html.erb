@@ -1,5 +1,4 @@
 <%= link_to "新規投稿ページへ", new_tweet_path %>
-<h1>私たちの本棚</h1>
 <%= link_to "マイページ", user_path(current_user.id) %>
 <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
 <h3>投稿一覧</h3>

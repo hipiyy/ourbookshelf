@@ -1,10 +1,9 @@
 class RoomsController < ApplicationController
 
     def show
-        @room = Room.find_by(sender_id: current_user.id, tweet_id: params[:id])
+        @room = Room.find_by(sender_id: params[:sender_id], tweet_id: params[:id])
         @message = Message.new
         @messages = Message.where(room_id: @room.id)
-
     end
 
     def create
