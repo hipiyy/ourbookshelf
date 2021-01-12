@@ -13,7 +13,7 @@ class RoomsController < ApplicationController
         room.sender_id = current_user.id
         room.owner_id = tweet.user_id
         room.save
-        redirect_to("/rooms/#{params[:id]}")
+        redirect_to("/rooms/#{params[:id]}/#{room.sender_id}")
     end
 
     def destroy
